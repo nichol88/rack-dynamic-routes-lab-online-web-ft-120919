@@ -3,7 +3,9 @@ class Application
     response = Rack::Response.new
     request = Rack::Request.new(env)
 
-    if response.path.match(/item/)
+    if response.path.match(/items\/\w*/)
+
     end
+    response.finish
   end
 end
