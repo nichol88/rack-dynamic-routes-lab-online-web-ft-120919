@@ -13,7 +13,7 @@ class Application
       binding.pry
       if @@items.include?(item)
 
-        item.price
+        response.write item.price
       else
         response.write "Item not found"
         response.status = 400
