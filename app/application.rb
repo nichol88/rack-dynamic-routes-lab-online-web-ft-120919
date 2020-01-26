@@ -6,7 +6,9 @@ class Application
 
     if request.path.match(/items\/\w*/)
       item = Item.find{ |i| i.name == req.params['item']}
-      if @@items.include?()
+      if @@items.include?(item)
+      else
+      end
     end
 
     response.finish
