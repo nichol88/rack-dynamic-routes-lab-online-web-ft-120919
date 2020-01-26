@@ -1,3 +1,5 @@
+gem 'pry'
+require 'pry'
 class Application
   @@items = ["Figs"]
   def call(env)
@@ -6,11 +8,11 @@ class Application
 
     if request.path.match(/items/)
       response.status = 200
-
+      binding.pry
       item = Item.all.find{ |i| i.name == req.params['item']}
 
       if @@items.include?(item)
-        binding.pry
+
         item.price
       else
         response.write "Item not found"
