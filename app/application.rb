@@ -1,4 +1,4 @@
-gem 'pry'
+
 require 'pry'
 class Application
   @@items = ["Figs"]
