@@ -9,7 +9,7 @@ class Application
     if request.path.match(/items/)
       response.status = 200
       #binding.pry
-      item = Item.all.find{ |i| i.name == req.params['item']}
+      item = Item.all.find{ |i| i.name == request.params['item']}
 
       if @@items.include?(item)
 
