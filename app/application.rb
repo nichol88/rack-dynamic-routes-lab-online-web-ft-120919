@@ -5,8 +5,9 @@ class Application
     request = Rack::Request.new(env)
 
     if response.path.match(/items\/\w*/)
-      respponse.write
+      if @@items.include?(request.params['item'])      
     end
+
     response.finish
   end
 end
