@@ -13,6 +13,7 @@ class Application
         response.write "Item not found"
       end
     else
+      response.write 'Route not found'
       response.status = 404
     end
 
