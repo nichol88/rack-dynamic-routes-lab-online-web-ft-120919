@@ -6,7 +6,7 @@ class Application
 
     if request.path.match(/items\/\w*/)
       response.status = 200
-      item = Item.find{ |i| i.name == req.params['item']}
+      item = Item.all.find{ |i| i.name == req.params['item']}
       if @@items.include?(item)
         item.price
       else
