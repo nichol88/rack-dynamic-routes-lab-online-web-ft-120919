@@ -8,8 +8,8 @@ class Application
 
     if request.path.match(/items/)
       response.status = 200
-      binding.pry
-      item = Item.all.find{ |i| i.name == request.params['item']}
+
+      item = Item.all.find{ |i| i.name == request.path.split('/').last}
 
       if @@items.include?(item)
 
