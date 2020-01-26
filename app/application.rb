@@ -5,7 +5,7 @@ class Application
     request = Rack::Request.new(env)
 
     if request.path.match(/items\/\w*/)
-      item =
+      item = Item.find{ |i| i.name == req.params['item']}
       if @@items.include?()
     end
 
