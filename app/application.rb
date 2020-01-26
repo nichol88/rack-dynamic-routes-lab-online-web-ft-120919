@@ -7,7 +7,9 @@ class Application
     if request.path.match(/items\/\w*/)
       item = Item.find{ |i| i.name == req.params['item']}
       if @@items.include?(item)
+        item.price
       else
+        response.write "Item not found"
       end
     end
 
