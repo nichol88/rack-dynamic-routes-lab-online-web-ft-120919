@@ -6,7 +6,7 @@ class Item
     @price = price
   end
 
-  def selfall
-
+  def self.all
+    @@all
   end
 end
