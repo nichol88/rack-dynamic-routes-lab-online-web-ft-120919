@@ -10,7 +10,7 @@ class Application
       response.status = 200
 
       item = Item.all.find{ |i| i.name == request.path.split('/').last}
-
+      binding.pry
       if @@items.include?(item)
 
         item.price
