@@ -6,12 +6,16 @@ class Application
 
     if request.path.match(/items/)
       response.status = 200
+
       item = Item.all.find{ |i| i.name == req.params['item']}
+
       if @@items.include?(item)
         item.price
       else
         response.write "Item not found"
+        response.status = 400
       end
+
     else
       response.write 'Route not found'
       response.status = 404
