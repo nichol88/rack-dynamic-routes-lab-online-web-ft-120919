@@ -10,6 +10,7 @@ class Application
       item = Item.all.find{ |i| i.name == req.params['item']}
 
       if @@items.include?(item)
+        binding.pry
         item.price
       else
         response.write "Item not found"
