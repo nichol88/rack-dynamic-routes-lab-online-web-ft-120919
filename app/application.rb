@@ -4,7 +4,7 @@ class Application
     response = Rack::Response.new
     request = Rack::Request.new(env)
 
-    if request.path.match(/items\/\w+/)
+    if request.path.match(/items/)
       response.status = 200
       item = Item.all.find{ |i| i.name == req.params['item']}
       if @@items.include?(item)
